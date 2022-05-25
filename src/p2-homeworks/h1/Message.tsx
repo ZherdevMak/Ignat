@@ -1,14 +1,20 @@
 import React from 'react';
 import messageCss from './Message.module.css'
 
-function Message() {
+type MessagePropsType = {
+    avatar: string,
+    name: string,
+    message: string,
+    time: string,
+}
+function Message(props: MessagePropsType) {
     return (
         <div className={messageCss.wrapper}>
-            <img className={messageCss.avatar} src='https://avotar.ru/avatar/krutye/100/46.jpg'/>
+            <img className={messageCss.avatar} src={props.avatar}/>
             <div className={messageCss.block}>
-                <h2>Artem</h2>
-                <p className={messageCss.text}>npm start нажимал?</p>
-                <p className={messageCss.date}>20:00</p>
+                <h2>{props.name}</h2>
+                <p className={messageCss.text}>{props.message}</p>
+                <p className={messageCss.date}>{props.time}</p>
             </div>
         </div>
     )
