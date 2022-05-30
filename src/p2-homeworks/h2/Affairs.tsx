@@ -23,14 +23,14 @@ function Affairs(props: AffairsPropsType) {
     const setLow = () => {props.setFilter('low')}
 
     return (
-        <div>
+        <div key="setAll">
 
             {mappedAffairs}
 
-            <button key="setAll" onClick={setAll}>All</button>
-            <button key="setHigh" onClick={setHigh}>High</button>
-            <button key="setMiddle" onClick={setMiddle}>Middle</button>
-            <button key="setLow" onClick={setLow}>Low</button>
+            <button  onClick={setAll}>All</button>
+            <button  onClick={setHigh}>High</button>
+            <button  onClick={setMiddle}>Middle</button>
+            <button  onClick={setLow}>Low</button>
         </div>
     )
 }
