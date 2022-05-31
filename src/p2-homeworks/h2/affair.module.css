@@ -1,0 +1,24 @@
+.affair_table {
+
+}
+.colomn {
+    width: 140px
+}
+.colomn_3 {
+    display: flex;
+    justify-content: space-between;
+    width: 140px
+}
+.colomn_3 span {
+    margin-right: 30px;
+}
+.colomn_3 button {
+    color: #090909;
+    font-size: 12px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+}
+
+
