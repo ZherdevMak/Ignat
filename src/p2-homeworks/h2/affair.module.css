@@ -20,5 +20,14 @@
     border: 1px solid #e8e8e8;
     transition: all .3s;
 }
+.high {
+    color: #b4083a;
+}
+.middle {
+    color:#b4a817
+}
+.low {
+    color: #21b40f
+}
 
 

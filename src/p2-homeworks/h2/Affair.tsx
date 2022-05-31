@@ -8,7 +8,13 @@ type AffairPropsType = {
     deleteAffairCallback: (_id: number) => void
 }
 
+
 function Affair(props: AffairPropsType) {
+
+    let setColor =  props.affair.priority === 'high' ? css.high : props.affair.priority === 'middle' ?
+        css.middle : props.affair.priority === 'low' ? css.low : ""
+
+
     const deleteCallback = () => {
         props.deleteAffairCallback(props.affair._id)
     }// need to fix
@@ -23,7 +29,7 @@ function Affair(props: AffairPropsType) {
                     <span>{props.affair.name}</span>
                 </th>
                 <th className={css.colomn_3}>
-                    <span>{props.affair.priority}</span>
+                    <span className={setColor}>{props.affair.priority}</span>
                     <button onClick={deleteCallback}>X</button>
                 </th>
             </tr>
