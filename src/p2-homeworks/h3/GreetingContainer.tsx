@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {ChangeEvent, ChangeEventHandler, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from "./HW3";
 
@@ -12,18 +12,35 @@ type GreetingContainerPropsType = {
 
 // более современный и удобный для про :)
 // уровень локальной логики
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
+const GreetingContainer: React.FC<GreetingContainerPropsType> = (props:GreetingContainerPropsType) => { // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('') // need to fix
+    const setNameCallback = (el: string) => {
+        setName(el);
+        setError("")
+    //     if (
+    //     el !== "") {
+    //     setName(el);
+    //     setError("")
+    // } else {
+    //     setError("Error")
+    //     setName(el)
+    // }
     }
     const addUser = () => {
-        alert(`Hello  !`) // need to fix
+        if (name !== "") {
+            alert(`Hello ${name}!`)// need to fix
+            props.addUserCallback(name);
+            setName("");
+            setError("")
+        } else {
+            setError("Error! Enter your name.")
+        }
+
     }
 
-    const totalUsers = 0 // need to fix
+    const totalUsers = props.users.length // need to fix
 
     return (
         <Greeting

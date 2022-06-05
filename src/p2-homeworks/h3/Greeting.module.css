@@ -3,5 +3,11 @@
 }
 
 .error {
-    border: 1px solid red;
+    border: 2px solid red;
+}
+.noError{
+    border: none;
+}
+.errorMessege {
+    color: red;
 }
