@@ -3,7 +3,7 @@ import s from './Greeting.module.css'
 
 type GreetingPropsType = {
     name: string // need to fix any
-    setNameCallback: (el: string) => void // need to fix any
+    setNameCallback: (e:ChangeEvent<HTMLInputElement>) => void // need to fix any
     addUser: () => void // need to fix any
     error: string // need to fix any
     totalUsers: number // need to fix any
@@ -19,7 +19,7 @@ const Greeting: React.FC<GreetingPropsType> = (props: GreetingPropsType
     return (
         <div>
             <div>
-                <input value={props.name} onChange={(e) => props.setNameCallback(e.currentTarget.value)}
+                <input value={props.name} onChange={props.setNameCallback}
                        className={inputClass}/>
                 <button onClick={props.addUser}>add</button>
                 <span>{props.totalUsers}</span>
