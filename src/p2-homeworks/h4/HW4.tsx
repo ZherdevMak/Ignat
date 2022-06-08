@@ -18,7 +18,6 @@ function HW4() {
 
     const [checked, setChecked] = useState<boolean>(false)
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
-
     return (
         <div>
             <hr/>
@@ -32,7 +31,6 @@ function HW4() {
                     error={error}
                     // spanClassName={s.testSpanError}
                 />
-
                 <SuperInputText
                     className={s.blue} // проверьте, рабоет ли смешивание классов
                 />
