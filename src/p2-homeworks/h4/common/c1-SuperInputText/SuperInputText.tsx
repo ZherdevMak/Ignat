@@ -1,5 +1,7 @@
 import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent} from 'react'
 import s from './SuperInputText.module.css'
+import {Simulate} from "react-dom/test-utils";
+// import input = Simulate.input;
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -29,6 +31,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         && onChange(e) // то передать ему е (поскольку onChange не обязателен)
 
         onChangeText && onChangeText(e.currentTarget.value)
+
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyPress && onKeyPress(e);
@@ -36,6 +39,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         onEnter // если есть пропс onEnter
         && e.key === 'Enter' // и если нажата кнопка Enter
         && onEnter() // то вызвать его
+        // onEnter ? e.currentTarget.value = '': ''
     }
 
     const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`

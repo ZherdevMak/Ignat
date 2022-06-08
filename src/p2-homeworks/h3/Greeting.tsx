@@ -1,5 +1,7 @@
 import React, {ChangeEvent, ChangeEventHandler} from 'react'
 import s from './Greeting.module.css'
+import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 type GreetingPropsType = {
     name: string // need to fix any
@@ -15,16 +17,19 @@ const Greeting: React.FC<GreetingPropsType> = (props: GreetingPropsType
 ) => {
     let inputClass = s.noError // need to fix with (?:)
     props.error ? inputClass = s.error : inputClass = s.noError
-
+debugger
     return (
         <div>
-            <div>
-                <input value={props.name} onChange={props.setNameCallback}
-                       className={inputClass}/>
-                <button onClick={props.addUser}>add</button>
-                <span>{props.totalUsers}</span>
-            </div>
-            <div><span className={s.errorMessege}>{props.error}</span></div>
+            <SuperInputText value={props.name} className={inputClass} onChange={props.setNameCallback} error={props.error}/>
+            <SuperButton children={"add"} onClick={props.addUser}/>
+            <span>{props.totalUsers}</span>
+            {/*<div>*/}
+            {/*    <input value={props.name} onChange={props.setNameCallback}*/}
+            {/*           className={inputClass}/>*/}
+            {/*    <button onClick={props.addUser}>add</button>*/}
+            {/*    <span>{props.totalUsers}</span>*/}
+            {/*</div>*/}
+            {/*<div><span className={s.errorMessege}>{props.error}</span></div>*/}
         </div>
 
     )

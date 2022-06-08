@@ -5,14 +5,15 @@ import SuperButton from './common/c2-SuperButton/SuperButton'
 import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
-    const [text, setText] = useState<string>('')
+    let [text, setText] = useState<string>('')
     const error = text ? '' : 'error'
 
     const showAlert = () => {
         if (error) {
             alert('введите текст...')
         } else {
-            alert(text) // если нет ошибки показать текст
+            alert(text)
+            setText('')// если нет ошибки показать текст
         }
     }
 
