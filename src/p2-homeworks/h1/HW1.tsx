@@ -1,6 +1,6 @@
 import React from 'react'
 import Message from "./Message";
-
+import stl from './HW.module.css'
 const messageData = {
     avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
     name: 'Some Name',
@@ -10,7 +10,7 @@ const messageData = {
 
 function HW1() {
     return (
-        <div>
+        <div className={stl.wrapper}>
             <hr/>
             homeworks 1
 

@@ -1,0 +1,33 @@
+.menu {
+position: relative;
+}
+.menu:hover {
+    z-index: 1000;
+}
+.wrapper {position: absolute;
+    left: -240px;
+    transition: transform 1s ;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.wrapper:hover{
+    transform: translateX(200px);
+}
+.menuItem {
+    text-decoration: none;
+    color: white;
+    padding-right: 10px;
+}
+.menuItem:hover {
+    color: red;
+}
+.menuItem:focus {
+    color: greenyellow;
+}
+.square {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #21b40f;
+}
