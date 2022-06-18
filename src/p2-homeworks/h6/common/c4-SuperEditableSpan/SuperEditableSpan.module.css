@@ -1,0 +1,14 @@
+.iconic::before {
+    content: "___";
+    min-width: 20px;
+    margin-top: 20px;
+    height: 50px;
+    background: url(https://www.freepnglogos.com/uploads/pencil-png/pencil-png-transparent-png-pictures-icons-and-png-2.png)
+    no-repeat  ;
+    background-size: 16px;
+}
+.spanWrapper {
+    height: 30px;
+    padding-top: 20px;
+
+}

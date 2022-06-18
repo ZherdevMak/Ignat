@@ -1,4 +1,4 @@
-import React, {ChangeEvent, ChangeEventHandler} from 'react'
+import React, {ChangeEvent} from 'react'
 import s from './Greeting.module.css'
 import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
 import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
@@ -17,7 +17,7 @@ const Greeting: React.FC<GreetingPropsType> = (props: GreetingPropsType
 ) => {
     let inputClass = s.noError // need to fix with (?:)
     props.error ? inputClass = s.error : inputClass = s.noError
-debugger
+
     return (
         <div>
             <SuperInputText value={props.name} className={inputClass} onChange={props.setNameCallback} error={props.error}/>
