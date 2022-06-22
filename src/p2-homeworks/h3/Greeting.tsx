@@ -23,13 +23,7 @@ const Greeting: React.FC<GreetingPropsType> = (props: GreetingPropsType
             <SuperInputText value={props.name} className={inputClass} onChange={props.setNameCallback} error={props.error}/>
             <SuperButton children={"add"} onClick={props.addUser}/>
             <span>{props.totalUsers}</span>
-            {/*<div>*/}
-            {/*    <input value={props.name} onChange={props.setNameCallback}*/}
-            {/*           className={inputClass}/>*/}
-            {/*    <button onClick={props.addUser}>add</button>*/}
-            {/*    <span>{props.totalUsers}</span>*/}
-            {/*</div>*/}
-            {/*<div><span className={s.errorMessege}>{props.error}</span></div>*/}
+
         </div>
 
     )
