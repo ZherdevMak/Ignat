@@ -1,0 +1,12 @@
+.wrapper {
+    width: 200px;
+}
+.spanButton {
+    padding-right: 5px
+}
+.table {
+
+    display: flex;
+    justify-content: space-between;
+}
+
