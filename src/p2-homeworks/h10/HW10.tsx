@@ -1,14 +1,22 @@
 import React from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import {useDispatch, useSelector} from "react-redux";
+import {loadingAC} from "./bll/loadingReducer";
+import Preloader from "./Preloader/Preloader";
+import {AppStoreType} from "./bll/store";
+import stl from "./HW10.module.css"
 
 function HW10() {
-    // useSelector, useDispatch
-    const loading = false
+    let loading = useSelector<AppStoreType, boolean>(state => state.loading.IsLoading)
+    console.log(loading)
+    let dispatch = useDispatch()
 
     const setLoading = () => {
-        // dispatch
-        // setTimeout
+        const stop_StartLoading = () => dispatch(loadingAC())
+        stop_StartLoading()
         console.log('loading...')
+        setTimeout(stop_StartLoading,2000)
+
     };
 
     return (
@@ -19,9 +27,9 @@ function HW10() {
             {/*should work (должно работать)*/}
             {loading
                 ? (
-                    <div>крутилка...</div>
+                    <Preloader/>
                 ) : (
-                    <div>
+                    <div className={stl.wrapper} >
                         <SuperButton onClick={setLoading}>set loading...</SuperButton>
                     </div>
                 )
