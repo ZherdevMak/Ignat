@@ -1,3 +1,27 @@
+.main {
+    display: inline-block;
+    margin-left: 2px;
+}
+
 .range {
+    -webkit-appearance: none;
+    color: #3f51b5;
+    cursor: pointer;
+    height: 2px;
+    background-color: #3f51b5;
+    width: 128px;
+}
+
+.main input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #3f51b5;
+}
+
+.main input[type=range]::-webkit-slider-runnable-track {
+    height: 10px;
+    color: red;
 
 }

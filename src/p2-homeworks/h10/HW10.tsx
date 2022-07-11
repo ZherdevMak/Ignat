@@ -12,10 +12,9 @@ function HW10() {
     let dispatch = useDispatch()
 
     const setLoading = () => {
-        const stop_StartLoading = () => dispatch(loadingAC())
-        stop_StartLoading()
+        dispatch(loadingAC(true))
         console.log('loading...')
-        setTimeout(stop_StartLoading,2000)
+        setTimeout(()=> {dispatch(loadingAC(false))},2000)
 
     };
 
